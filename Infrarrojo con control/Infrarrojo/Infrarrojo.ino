@@ -1,24 +1,24 @@
 #include "IRremote.h"
  
  
-const long KEY_UP = 0xFF629D;
-const long KEY_LEFT = 0xFF22DD;
-const long KEY_OK = 0xFF02FD;
-const long KEY_RIGHT = 0xFFC23D;
-const long KEY_DOWN = 0xFFA857;
-const long KEY_1 = 0xFF6897;
-const long KEY_2 = 0xFF9867;
-const long KEY_3 = 0xFFB04F;
-const long KEY_4 = 0xFF30CF;
-const long KEY_5 = 0xFF18E7;
-const long KEY_6 = 0xFF7A85;
-const long KEY_7 = 0xFF10EF;
-const long KEY_8 = 0xFF38C7;
-const long KEY_9 = 0xFF5AA5;
-const long KEY_0 = 0xFF4AB5;
-const long KEY_ASTERISK = 0xFF42BD;
-const long KEY_POUND = 0xFF52AD;
-const long KEY_REPEAT = 0xFFFFFFFF;
+const long KEY_UP = 0xFF18E7;
+const long KEY_LEFT =0xFF10EF; 
+const long KEY_OK = 0xFF38C7;
+const long KEY_RIGHT = 0xFF5AA5;
+const long KEY_DOWN = 0xFF4AB5;
+const long KEY_1 =0xFFA25D;
+const long KEY_2 = 0xFF629D;
+const long KEY_3 = 0xFFE21D;
+const long KEY_4 = 0xFF22DD;
+const long KEY_5 = 0xFF02FD;
+const long KEY_6 = 0xFFC23D;
+const long KEY_7 = 0xFFE01F;
+const long KEY_8 = 0xFFA857;
+const long KEY_9 = 0xFF906F;
+const long KEY_0 = 0xFF9867;
+const long KEY_ASTERISK = 0xFF6897;
+const long KEY_POUND = 0xFFB04F;
+//const long KEY_REPEAT = 0xFFFFFFFF 
  
 const int RECV_PIN = 9;
  
@@ -34,7 +34,7 @@ void setup()
 void loop()
 {
    if (irrecv.decode(&results))
-   {
+   { 
       switch (results.value)
       {
       case KEY_UP:
@@ -87,9 +87,6 @@ void loop()
          break;
       case KEY_POUND:
          Serial.println("KEY_POUND");
-         break;
-      case KEY_REPEAT:
-         Serial.println("KEY_REPEAT");
          break;
       }
       irrecv.resume();
